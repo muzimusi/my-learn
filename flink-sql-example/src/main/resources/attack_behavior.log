@@ -1,0 +1,11 @@
+{"source_ip": "192.168.199.198", "target_ip":"192.168.199.200", "behavior": "Trojan horse", "ts": "2017-11-26T01:00:00Z"}
+{"source_ip": "192.168.199.199", "target_ip":"192.168.199.200", "behavior": "Trojan horse", "ts": "2017-11-26T01:02:00Z"}
+{"source_ip": "192.168.199.197", "target_ip":"192.168.199.200", "behavior": "Phishing mail", "ts": "2017-11-26T01:00:00Z"}
+{"source_ip": "192.168.199.199", "target_ip":"192.168.199.201", "behavior": "Phishing mail", "ts": "2017-11-26T01:02:00Z"}
+{"source_ip": "192.168.199.198", "target_ip":"192.168.199.201", "behavior": "Phishing mail", "ts": "2017-11-26T01:01:00Z"}
+{"source_ip": "192.168.199.199", "target_ip":"192.168.199.201", "behavior": "Trojan horse", "ts": "2017-11-26T01:00:00Z"}
+{"source_ip": "192.168.199.199", "target_ip":"192.168.199.202", "behavior": "Trojan horse", "ts": "2017-11-26T01:01:00Z"}
+{"source_ip": "192.168.199.197", "target_ip":"192.168.199.202", "behavior": "Phishing mail", "ts": "2017-11-26T01:00:00Z"}
+{"source_ip": "192.168.199.198", "target_ip":"192.168.199.202", "behavior": "Trojan horse", "ts": "2017-11-26T01:00:00Z"}
+{"source_ip": "192.168.199.198", "target_ip":"192.168.199.202", "behavior": "Trojan horse", "ts": "2017-11-26T01:00:00Z"}
+{"source_ip": "192.168.199.198", "target_ip":"192.168.199.202", "behavior": "Trojan horse", "ts": "2017-11-26T01:00:00Z"}

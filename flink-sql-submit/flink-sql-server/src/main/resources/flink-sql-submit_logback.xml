@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one or more
+  ~ contributor license agreements.  See the NOTICE file distributed with
+  ~ this work for additional information regarding copyright ownership.
+  ~ The ASF licenses this file to You under the Apache License, Version 2.0
+  ~ (the "License"); you may not use this file except in compliance with
+  ~ the License.  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- Logback configuration. See http://logback.qos.ch/manual/index.html -->
+<configuration>
+	<property name="LOG_HOME" value="logs"/>
+
+	<!-- 控制台打印日志的相关配置 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 日志格式 -->
+
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - [%class:%line] - [%level] - %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 文件保存日志的相关配置 -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 保存日志文件的路径 -->
+		<file>${LOG_HOME}/flink-sql-server.log</file>
+		<!-- 日志格式 -->
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - [%class:%line] - [%level] - %m%n</pattern>
+		</encoder>
+
+		<!-- 循环政策：基于时间创建日志文件 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 日志文件名格式 -->
+			<fileNamePattern>${LOG_HOME}/saas.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 最大保存时间：30天-->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<!--日志文件最大的大小-->
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<logger name="sql.submit.server" level="INFO" additivity="false">
+		<appender-ref ref="FILE"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE"/>
+	</root>
+
+
+</configuration>

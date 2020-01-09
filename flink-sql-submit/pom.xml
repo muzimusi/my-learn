@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.arjenlee</groupId>
+    <artifactId>flink-sql-submit</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>flink-sql-server</module>
+        <module>flink-sql-core</module>
+        <module>flink-sql-example</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring.version>5.1.5.RELEASE</spring.version>
+        <spring.boot.version>2.1.3.RELEASE</spring.boot.version>
+        <java.version>1.8</java.version>
+        <oshi.core.version>3.5.0</oshi.core.version>
+        <spotbugs.version>3.1.12</spotbugs.version>
+        <jackson.version>2.9.8</jackson.version>
+        <junit.version>4.12</junit.version>
+        <logback.version>1.2.3</logback.version>
+        <slf4j.api.version>1.7.5</slf4j.api.version>
+        <slf4j.log4j12.version>1.7.5</slf4j.log4j12.version>
+        <commons.io.version>2.4</commons.io.version>
+        <commons.lang.version>2.3</commons.lang.version>
+        <commons.lang3.version>3.5</commons.lang3.version>
+        <commons.logging.version>1.1.1</commons.logging.version>
+        <javax.servlet.api.version>3.1.0</javax.servlet.api.version>
+        <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
+        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+        <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+        <jacoco.version>0.8.4</jacoco.version>
+        <maven.deploy.skip>false</maven.deploy.skip>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

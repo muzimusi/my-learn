@@ -1,0 +1,8 @@
+hello hadoop
+hello spark
+hello yarn
+hello hdfs
+hello storm
+hello flink
+hello hive
+hello scala

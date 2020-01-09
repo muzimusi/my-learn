@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.arjenlee.shirolearn.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="me.arjenlee.shirolearn.entity.User">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="department_id" jdbcType="INTEGER" property="departmentId" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="reg_ip" jdbcType="VARCHAR" property="regIp" />
+    <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp" />
+    <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="login_count" jdbcType="INTEGER" property="loginCount" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+<!--  <insert id="insert" parameterType="me.arjenlee.shirolearn.entity.User">-->
+<!--    insert into user (id, username, nickname, -->
+<!--      password, role_id, department_id, -->
+<!--      mobile, email, birthday, -->
+<!--      gender, avatar, reg_ip, -->
+<!--      last_login_ip, last_login_time, login_count, -->
+<!--      remark, status, create_time, -->
+<!--      update_time)-->
+<!--    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, -->
+<!--      #{password,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, #{departmentId,jdbcType=INTEGER}, -->
+<!--      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, -->
+<!--      #{gender,jdbcType=TINYINT}, #{avatar,jdbcType=VARCHAR}, #{regIp,jdbcType=VARCHAR}, -->
+<!--      #{lastLoginIp,jdbcType=VARCHAR}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{loginCount,jdbcType=INTEGER}, -->
+<!--      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, -->
+<!--      #{updateTime,jdbcType=TIMESTAMP})-->
+<!--  </insert>-->
+<!--  <insert id="insertSelective" parameterType="me.arjenlee.shirolearn.entity.User">-->
+<!--    insert into user-->
+<!--    <trim prefix="(" suffix=")" suffixOverrides=",">-->
+<!--      <if test="id != null">-->
+<!--        id,-->
+<!--      </if>-->
+<!--      <if test="username != null">-->
+<!--        username,-->
+<!--      </if>-->
+<!--      <if test="nickname != null">-->
+<!--        nickname,-->
+<!--      </if>-->
+<!--      <if test="password != null">-->
+<!--        password,-->
+<!--      </if>-->
+<!--      <if test="roleId != null">-->
+<!--        role_id,-->
+<!--      </if>-->
+<!--      <if test="departmentId != null">-->
+<!--        department_id,-->
+<!--      </if>-->
+<!--      <if test="mobile != null">-->
+<!--        mobile,-->
+<!--      </if>-->
+<!--      <if test="email != null">-->
+<!--        email,-->
+<!--      </if>-->
+<!--      <if test="birthday != null">-->
+<!--        birthday,-->
+<!--      </if>-->
+<!--      <if test="gender != null">-->
+<!--        gender,-->
+<!--      </if>-->
+<!--      <if test="avatar != null">-->
+<!--        avatar,-->
+<!--      </if>-->
+<!--      <if test="regIp != null">-->
+<!--        reg_ip,-->
+<!--      </if>-->
+<!--      <if test="lastLoginIp != null">-->
+<!--        last_login_ip,-->
+<!--      </if>-->
+<!--      <if test="lastLoginTime != null">-->
+<!--        last_login_time,-->
+<!--      </if>-->
+<!--      <if test="loginCount != null">-->
+<!--        login_count,-->
+<!--      </if>-->
+<!--      <if test="remark != null">-->
+<!--        remark,-->
+<!--      </if>-->
+<!--      <if test="status != null">-->
+<!--        status,-->
+<!--      </if>-->
+<!--      <if test="createTime != null">-->
+<!--        create_time,-->
+<!--      </if>-->
+<!--      <if test="updateTime != null">-->
+<!--        update_time,-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--    <trim prefix="values (" suffix=")" suffixOverrides=",">-->
+<!--      <if test="id != null">-->
+<!--        #{id,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="username != null">-->
+<!--        #{username,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="nickname != null">-->
+<!--        #{nickname,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="password != null">-->
+<!--        #{password,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="roleId != null">-->
+<!--        #{roleId,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="departmentId != null">-->
+<!--        #{departmentId,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="mobile != null">-->
+<!--        #{mobile,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="email != null">-->
+<!--        #{email,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="birthday != null">-->
+<!--        #{birthday,jdbcType=DATE},-->
+<!--      </if>-->
+<!--      <if test="gender != null">-->
+<!--        #{gender,jdbcType=TINYINT},-->
+<!--      </if>-->
+<!--      <if test="avatar != null">-->
+<!--        #{avatar,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="regIp != null">-->
+<!--        #{regIp,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="lastLoginIp != null">-->
+<!--        #{lastLoginIp,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="lastLoginTime != null">-->
+<!--        #{lastLoginTime,jdbcType=TIMESTAMP},-->
+<!--      </if>-->
+<!--      <if test="loginCount != null">-->
+<!--        #{loginCount,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="remark != null">-->
+<!--        #{remark,jdbcType=VARCHAR},-->
+<!--      </if>-->
+<!--      <if test="status != null">-->
+<!--        #{status,jdbcType=INTEGER},-->
+<!--      </if>-->
+<!--      <if test="createTime != null">-->
+<!--        #{createTime,jdbcType=TIMESTAMP},-->
+<!--      </if>-->
+<!--      <if test="updateTime != null">-->
+<!--        #{updateTime,jdbcType=TIMESTAMP},-->
+<!--      </if>-->
+<!--    </trim>-->
+<!--  </insert>-->
+  <sql id="Base_Column_List">
+    Host, User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, Drop_priv, 
+    Reload_priv, Shutdown_priv, Process_priv, File_priv, Grant_priv, References_priv, 
+    Index_priv, Alter_priv, Show_db_priv, Super_priv, Create_tmp_table_priv, Lock_tables_priv, 
+    Execute_priv, Repl_slave_priv, Repl_client_priv, Create_view_priv, Show_view_priv, 
+    Create_routine_priv, Alter_routine_priv, Create_user_priv, Event_priv, Trigger_priv, 
+    Create_tablespace_priv, ssl_type, max_questions, max_updates, max_connections, max_user_connections, 
+    plugin, password_expired, password_last_changed, password_lifetime, account_locked, 
+    Create_role_priv, Drop_role_priv, Password_reuse_history, Password_reuse_time, Password_require_current
+  </sql>
+</mapper>
