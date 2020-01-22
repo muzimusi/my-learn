@@ -13,6 +13,7 @@
         <module>flink-sql-server</module>
         <module>flink-sql-core</module>
         <module>flink-sql-example</module>
+        <module>flink-sql-dist</module>
     </modules>
 
     <properties>
